@@ -1,0 +1,40 @@
+Design Document Format
+
+LinearEquation class
+
+Instance Variables:
+private int x1 - This variable represents the x1-coordinate
+private int x2 - This variable represents the x2-coordinate
+private int y1 - This variable represents the y1-coordinate
+private int y2 - This variable represents the y2-coordinate
+
+
+Constructor
+	public LinearEquation(int x1,int y1,int x2,int y2)
+
+Methods
+
+public void ToSlope()
+Plug integer values into point slope form to determine the slope and y intercept.
+Store the slope and y intercept as variables, make a final string containing the information.
+
+
+public String toString()
+This method will display all relevant information about this instance including:
+X and Y coordinate information
+Slope Intercept Form equation
+
+
+
+EquationRunner.java
+
+Step 1: Ask user to enter first coordinate point
+Step 2: Ask user to enter second coordinate point
+Step 3: Use substring to convert coordinate points into 4 different variables.
+Convert these variables from strings to integers.
+Step 4: Construct an instance of the Linear Equation object.
+Step 5: print the returned equation and info from the LinearEquation object.
+Step 6: Ask the user for x input to plug in.
+Step 7: Plug x input into final equation.
+Step 8: Return y value.
+
