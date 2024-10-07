@@ -1,40 +1,80 @@
-Design Document Format
+LinearEquation Class
 
-LinearEquation class
 
 Instance Variables:
-private int x1 - This variable represents the x1-coordinate
-private int x2 - This variable represents the x2-coordinate
-private int y1 - This variable represents the y1-coordinate
-private int y2 - This variable represents the y2-coordinate
+private int x1, y1;
+Stores the x and y coordinates of the first point.
+private int x2, y2;
+Stores the x and y coordinates of the second point.
 
 
-Constructor
-	public LinearEquation(int x1,int y1,int x2,int y2)
-
-Methods
-
-public void ToSlope()
-Plug integer values into point slope form to determine the slope and y intercept.
-Store the slope and y intercept as variables, make a final string containing the information.
+Constructor:
+public LinearEquation(int x1, int y1, int x2, int y2)
+Initializes the instance variables using the coordinates of the two points. The constructor ensures that x1 != x2 as a precondition.
+Methods:
 
 
+public double distance()
+Calculates the distance between the two points using the distance formula:
+distance = sqrt((x2 - x1)^2 + (y2 - y1)^2)
+Returns the distance, rounded to the nearest hundredth.
+
+
+public String slope()
+Calculates the slope of the line using the formula:
+slope = (y2 - y1) / (x2 - x1)
+If the slope is an integer, returns it as a fraction.
+If the slope is undefined the constructor ensures this won't happen.
+public double yIntercept()
+Uses the formula y = mx + b to solve for the y-intercept.
+Returns the y-intercept, rounded to the nearest hundredth.
+
+public String equation()
+Constructs a String representing the linear equation.
+Uses the slope from slope() and the y-intercept from yIntercept().
 public String toString()
-This method will display all relevant information about this instance including:
-X and Y coordinate information
-Slope Intercept Form equation
+Prints out:
+The original points.
+The equation of the line in slope-intercept form.
+The slope of the line.
+The y-intercept.
+The distance between the points.
+public String solveForY(double xValue)
+Given an x-value, solves for the corresponding y-value using the equation y = mx + b.
+Returns the coordinate (x, y) as a String.
 
+EquationRunner Class
+Ask user for first coordinate
 
+Input format: (x1, y1)
 
-EquationRunner.java
+Use Scanner to accept input and parse the x1 and y1 values from the string.
 
-Step 1: Ask user to enter first coordinate point
-Step 2: Ask user to enter second coordinate point
-Step 3: Use substring to convert coordinate points into 4 different variables.
-Convert these variables from strings to integers.
-Step 4: Construct an instance of the Linear Equation object.
-Step 5: print the returned equation and info from the LinearEquation object.
-Step 6: Ask the user for x input to plug in.
-Step 7: Plug x input into final equation.
-Step 8: Return y value.
+Ask user for second coordinate
+
+Input format: (x2, y2)
+
+Again, use Scanner to accept input and parse the x2 and y2 values.
+
+Create LinearEquation object
+
+Pass the parsed values into the constructor.
+
+Call and display results from LinearEquation
+
+Print the original points.
+
+Print the equation of the line.
+
+Print the slope.
+
+Print the y-intercept.
+
+Print the distance between the two points.
+
+Ask user for an x-value to solve for y
+
+Input: A double value for x.
+
+Use the solveForY() method to calculate and display the coordinate (x, y).
 
