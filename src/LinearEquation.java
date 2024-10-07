@@ -104,6 +104,8 @@ public class LinearEquation {
         if (m.equals("") && b == 0) {
             return "y = 0";
         }
+            else if (m.equals("0x")) {
+                return "y = "+bVal.substring(2);}
 
 
         equation = "y = " + m;
