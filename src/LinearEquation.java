@@ -37,7 +37,7 @@ public class LinearEquation {
             } else if (slopeInt == -1) {
                 return "-";
             } else {
-                return (slopeInt)+"";
+                return (slopeInt)+"x";
             }
 
 
@@ -87,6 +87,7 @@ public class LinearEquation {
 
     // Method to return the equation
     public String equation() {
+        String equation = "";
         String m = slope();
         double b = yIntercept();
         String bVal = "";
@@ -105,7 +106,9 @@ public class LinearEquation {
         }
 
 
-        String equation = "y = " + m;
+        equation = "y = " + m;
+
+
         if (b != 0) {
             equation += " " + bVal; // Append the y-intercept if b isn't 0
         }
