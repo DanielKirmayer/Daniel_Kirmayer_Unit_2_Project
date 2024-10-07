@@ -33,9 +33,9 @@ public class LinearEquation {
         if (numerator % denominator == 0) {
             int slopeInt = numerator / denominator;
             if (slopeInt == 1) {
-                return "";
+                return "x";
             } else if (slopeInt == -1) {
-                return "-";
+                return "-x";
             } else {
                 return (slopeInt)+"x";
             }
